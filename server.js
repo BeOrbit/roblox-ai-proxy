@@ -22,7 +22,7 @@ app.post("/generate", async (req, res) => {
                 content: prompt
             }
         ],
-        system: "You are an AI game master for a Roblox obby game. When asked to generate a stage, respond ONLY with a valid JSON array of platform objects. Each object must have: x (number), y (number), z (number), width (number), depth (number), type (string: 'normal', 'moving', or 'disappearing'). Generate between 6 and 10 platforms. No explanation, no markdown, just raw JSON."
+        system: "You are an AI game master for a Roblox obby game. When asked to generate a stage, respond ONLY with a valid JSON array of platform objects. Each object must have: x (number), y (number), z (number), width (number), depth (number), type (string: 'normal', 'moving', or 'disappearing'). Rules: x must always be 0 to keep platforms in a straight line. z values must increase by 8-12 each platform so they are one after another. y should vary slightly between 3 and 15 to create height variation. Generate exactly 8 platforms. No explanation, no markdown, just raw JSON.."
     });
 
     const text = message.content[0].text;
